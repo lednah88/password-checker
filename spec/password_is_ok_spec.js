@@ -4,9 +4,9 @@ describe("passwordIsOk", () => {
     expect(passwordIsOk("Xongile@#3")).toBe(true);
   });
   it("should meet less than 3 conditions", () => {
-    expect(passwordIsOk("Xongile")).toBe("password is never ok");
+    expect(passwordIsOk("Xongile")).toBe(false);
   });
   it("should return password is never ok if condition 1 & 2 are not met", () => {
-    expect(passwordIsOk("")).toBe("password is never ok");
+    expect(passwordIsOk("")).toBe(false);
   });
 });

@@ -24,7 +24,6 @@ function passwordIsValid(password) {
     throw Error("password should have at least one special character");
   }
 }
-passwordIsValid("Rixongile#1");
 
 function passwordIsOk(password) {
   let numberOfConditions = 0;
@@ -47,13 +46,12 @@ function passwordIsOk(password) {
     numberOfConditions += 1;
   }
   if (password == null || password.match(longerThan8Characters) == null) {
-    return "password is never ok";
+    return false;
   }
   if (numberOfConditions >= 3) {
     return true;
   } else {
-    return "password is never ok";
+    return false;
   }
 }
-console.log(passwordIsOk("XongileMa"));
 module.exports = { passwordIsValid, passwordIsOk };
